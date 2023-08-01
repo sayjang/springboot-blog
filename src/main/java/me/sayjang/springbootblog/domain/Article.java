@@ -36,10 +36,15 @@ public class Article {
     @Column(name = "updated_at")
     private LocalDateTime updateAt;
 
+    @Column(name = "author", nullable = false)
+    private String author;
+
+
     @Builder//빌더패턴으로 객체 생성
-    public Article(String title, String content){
+    public Article(String title, String content, String author){
         this.title = title;
         this.content = content;
+        this.author = author;
     }
 
     public void update(String title, String content){
